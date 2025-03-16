@@ -1,0 +1,149 @@
+Step-by-Step Guide to Install TensorFlow with GPU Support on Windows 11
+
+Your NVIDIA GTX 1650 supports TensorFlow GPU, but you need to set up CUDA and cuDNN properly. Follow these steps carefully.
+
+
+---
+
+Step 1: Check Your System Requirements
+
+✅ OS: Windows 11 (64-bit)
+✅ GPU: NVIDIA GTX 1650 (CUDA-compatible)
+✅ Python: 3.8 or later (recommended: Python 3.10)
+✅ NVIDIA Driver: You have 572.70 (already installed)
+
+Now, let's install CUDA, cuDNN, and TensorFlow.
+
+
+---
+
+Step 2: Install CUDA Toolkit
+
+Check if CUDA is Already Installed
+
+1. Open Command Prompt (cmd) or PowerShell.
+
+
+2. Type:
+
+nvcc --version
+
+If it shows a CUDA version (like 12.8), CUDA is installed. If not, install it manually.
+
+
+
+Download and Install CUDA 12.8
+
+1. Go to CUDA Downloads.
+
+
+2. Select:
+
+Operating System: Windows
+
+Architecture: x86_64
+
+Version: 12.8
+
+Installer Type: exe (local)
+
+
+
+3. Download and run the installer.
+
+
+4. Choose Express Installation and complete the setup.
+
+
+5. Restart your system after installation.
+
+
+
+
+---
+
+Step 3: Install cuDNN (CUDA Deep Neural Network Library)
+
+1. Download cuDNN 8.9+ from: NVIDIA cuDNN.
+
+You need to create a free NVIDIA Developer account to access the download.
+
+
+
+2. Select cuDNN 8.9 for CUDA 12.x (Windows version).
+
+
+3. Extract the downloaded zip file.
+
+
+4. Copy the contents to the CUDA installation folder (usually C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\):
+
+bin → C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin
+
+lib → C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\lib
+
+include → C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include
+
+
+
+
+
+---
+
+
+
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin
+C:\ProC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\libnvvm\bin
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\includegram Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\libnvvm\bin
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include
+
+
+---
+
+Step 5: Install TensorFlow (GPU Version)
+
+1. Install Python and Virtual Environment
+
+1. Download and install Python 3.10+ from Python.org.
+
+
+2. Open Command Prompt and create a virtual environment (recommended):
+
+python -m venv tensorflow_env
+
+
+3. Activate the virtual environment:
+
+tensorflow_env\Scripts\activate
+
+
+
+2. Install TensorFlow with GPU Support
+
+1. Upgrade pip:
+
+pip install --upgrade pip
+
+
+2. Install TensorFlow GPU:
+
+pip install tensorflow[and-cuda]
+
+
+
+
+---
+
+Step 6: Verify Installation
+
+1. Check if TensorFlow Recognizes GPU
+
+Open Python and run:
+
+import tensorflow as tf
+print("Num GPUs Available:", len(tf.config.experimental.list_physical_devices('GPU')))
+
+If it returns 1 or more, TensorFlow is using your GPU.
+
+2. Run a Simple Test

@@ -1,0 +1,54 @@
+The GTZAN dataset is a widely used benchmark dataset in the field of music genre classification and music information retrieval (MIR). It was created by George Tzanetakis and is often used for training and evaluating models that classify music into genres.
+
+What is the GTZAN Dataset?
+
+The GTZAN Genre Collection contains:
+1000 audio tracks
+10 music genres
+30 seconds per track
+All audio files are in .wav format
+Sample rate: 22050 Hz
+Each genre has 100 audio clips
+
+🗂️The 10 Genres Included:
+
+Blues
+Classical
+Country
+Disco
+Hip hop
+Jazz
+Metal
+Pop
+Reggae
+Rock
+
+🧠 Applications:
+
+Music genre classification
+Audio feature extraction
+Deep learning for sound
+Building music recommendation systems
+
+⚙️ Common Preprocessing Steps:
+
+When working with GTZAN, you usually:
+Convert audio into spectrograms or Mel spectrograms
+Use libraries like librosa to extract features (e.g., MFCCs, chroma, spectral contrast)
+Normalize or standardize data
+Split into train/test sets (commonly 80/20 or 70/30)
+
+🧪 Example ML Use Case:
+
+Load audio files using librosa
+Extract features like MFCC or Mel Spectrogram
+Train a model (e.g., CNN, SVM, Random Forest)
+Evaluate with metrics like accuracy or confusion matrix
+
+⚠️ Known Issues:
+
+While it's a useful dataset, there are some caveats:
+Duplicates: Some tracks are repeated or very similar.
+Mislabeling: A few tracks may be wrongly labeled.
+Small size: Only 1000 tracks, which is small for deep learning.
+Researchers often supplement GTZAN with additional datasets or use data augmentation.
